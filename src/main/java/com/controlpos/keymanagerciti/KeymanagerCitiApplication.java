@@ -17,6 +17,7 @@ public class KeymanagerCitiApplication {
 		SpringApplication.run(KeymanagerCitiApplication.class, args);
 	}
 
+
 	@Bean
 	public OpenAPI customOpenAPI(@Value("${springdoc.version}") String appVersion) {
 		return new OpenAPI()
