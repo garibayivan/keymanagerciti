@@ -1,4 +1,4 @@
-package com.controlpos.keymanagerciti.Api;
+package com.controlpos.keymanagerciti;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;

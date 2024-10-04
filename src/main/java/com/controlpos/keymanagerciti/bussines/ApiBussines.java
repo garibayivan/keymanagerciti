@@ -29,9 +29,6 @@ public class ApiBussines {
 	public String desencriptaTemplete(String serialNumber, String aesKeyEcriptedWithRsa, String templeteEncriptedWithAes) {
 
 		
-		int numeroEntero = Integer.parseInt(serialNumber);
-		int c = Integer.parseInt(aesKeyEcriptedWithRsa);
-		
 		return "fff";
 	}
 }
