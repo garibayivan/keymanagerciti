@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/api")
 @Tag(name = "Key Management API", description = "Manejo de desencriptacion de llaves")
 public class ApiController {
-
     @GetMapping("/getKeyRSA")
     @Operation(summary = "Recuperar clave AES descifrada RSA",
                description = "Este punto final toma una clave AES cifrada con RSA y la descifra.")

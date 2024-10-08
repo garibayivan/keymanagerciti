@@ -24,8 +24,6 @@ public class ApiBussines {
 			return "Error al leer la clave pública";
 		}
 	}
-	
-
 	public String desencriptaTemplete(String serialNumber, String aesKeyEcriptedWithRsa, String templeteEncriptedWithAes) {
 
 		
