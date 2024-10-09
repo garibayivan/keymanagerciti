@@ -20,9 +20,9 @@ public class ApiController {
 	@Autowired
 	ApiBussines apiBussines;
 	
-    @GetMapping("/getKeyRSA")
-    @Operation(summary = "Recuperar clave AES descifrada RSA",
-               description = "Este punto final toma una clave AES cifrada con RSA y la descifra.")
+    @GetMapping("/getRsa")
+    @Operation(summary = "Recuperar la clave publica RSA",
+               description = "Recuperala llave RSA publica.")
     public String getRsa(
             @Parameter(description = "Clave AES cifrada con RSA", required = true) 
             @RequestParam String aesKeyEcriptedWithRsa) {
@@ -31,14 +31,14 @@ public class ApiController {
     }
 
     @GetMapping("/desencriptaTemplete")
-    @Operation(summary = "Descifrar plantilla AES",
-               description = "Este punto final toma un número de serie, una clave AES decifrada con RSA y una plantilla cifrada con AES para realizar el descifrado.")
+    @Operation(summary = "DDesencripta Template AES",
+               description = "Toma el numero de serie, una clave AES decifrada con RSA y decifra la plantilla cifrada con AES para realizar el descifrado.")
     public String getRsa(
             @Parameter(description = "Numero de serie del lector de huella", required = true) 
             @RequestParam String serialNumber,
             @Parameter(description = "Llave AES encriptada con RSA", required = true) 
             @RequestParam String aesKeyEcriptedWithRsa,
-            @Parameter(description = "Template encriptado con AES", required = true) 
+            @Parameter(description = "Finger Template Encripted AES", required = true) 
             @RequestParam String templeteEncriptedWithAes) {
 
         return "fff";
