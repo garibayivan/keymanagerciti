@@ -1,17 +1,25 @@
 package com.controlpos.keymanagerciti.controller;
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.controlpos.keymanagerciti.bussines.ApiBussines;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping(value = "/api")
 @Tag(name = "Key Management API", description = "Manejo de desencriptacion de llaves")
 public class ApiController {
+	
+	@Autowired
+	ApiBussines apiBussines;
+	
     @GetMapping("/getKeyRSA")
     @Operation(summary = "Recuperar clave AES descifrada RSA",
                description = "Este punto final toma una clave AES cifrada con RSA y la descifra.")
@@ -19,7 +27,7 @@ public class ApiController {
             @Parameter(description = "Clave AES cifrada con RSA", required = true) 
             @RequestParam String aesKeyEcriptedWithRsa) {
         // Invoke the method to decrypt the AES key in the business layer
-        return "fff";
+        return apiBussines.getRsa(aesKeyEcriptedWithRsa);
     }
 
     @GetMapping("/desencriptaTemplete")
